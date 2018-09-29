@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ethan Kenneth's Matching Game</title>
+    <meta name="description" content="Ethan Kenneth's Udacity FEND Memory Game">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Ethan Kenneth's Matching Game</h1>
+        </header>
+
+        <section class="score-panel">
+<!-- Star Rating:
+The game displays a star rating (from 1 to at least 3) that reflects the player's performance. At the beginning of a game, it should display at least 3 stars. After some number of moves, it should change to a lower star rating. After a few more moves, it should change to a even lower star rating (down to 1).-->
+          <div class="star-rating">
+        	  <ul class="stars">
+        		  <li><i class="fa fa-star" id="starThree"></i></li>
+        		  <li><i class="fa fa-star" id="starTwo"></i></li>
+        		  <li><i class="fa fa-star" id="starOne"></i></li>
+          	</ul>
+<!-- Move Counter:
+Game displays the current number of moves a user has made.  -->
+          	<span class="moves" id="moves">0</span><span id="movesText"> Moves</span>
+          </div>
+<!-- Timer:
+When the player starts a game, a displayed timer should also start. Once the player wins the game, the timer stops. -->
+          <div id="timer"><span id="timer-text">Timer: </span>
+            <label class="minutes">00</label>:<label class="seconds">00</label></div>
+<!-- // Restart Button:
+A restart button allows the player to reset the game board, the timer, and the star rating. -->
+          <div class="restart" id="restart">
+        		<span id="restart-text">Restart: </span><i class="fa fa-repeat"></i>
+        	</div>
+        </section> <!-- End section score -->
+
+        <ul class="deck">
+        </ul>
+    </div> <!-- End div class="container" -->
+
+<!-- Congratulations Popup:
+When a user wins the game, a modal appears to congratulate the player and ask if they want to play again. Source: www.w3schools.com -->
+    <div id="win-popup" class="popup zoomIn">
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <h1>Congratulations!</h1>
+        <h3>You won the game in <span class="minutes">0</span> minutes and <span class="seconds">0</span> seconds.</h3>
+        <h3>Total moves: <span id="total-moves">0</span><span id="star-rating-text"> Star Rating: </span><span id="total-stars">0</span> out of 3</h3>
+        <button type="button" class="button" id="play-again-btn">
+          PLAY AGAIN?
+        </button>
+      </div> <!-- End div class="popup-content"-->
+
+    </div> <!-- End div id="win-popup" class="popup zoomIn" -->
+
+
+    <script src="js/app.js"></script>
+</body>
+</html>
